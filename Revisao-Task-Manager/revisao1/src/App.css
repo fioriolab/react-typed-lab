@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+section {
+    width: 400px;
+}
+
+section img {
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+section hr {
+    margin: 10px 0px;
+    border: 1px solid black;
+}
+
+section h1 {
+    text-align: center;
+}
+
+.registrar {
+    text-align: center;
+}
+
+input[type="text"] {
+    height: 30px;
+    width: 200px;
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    height: 30px;
+    width: 150px;
+    margin: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+    transition-duration: .2s;
+}
+
+button:active {
+    background-color: white;
+    color: darkgreen;
+    transition-duration: 0s;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+.botao-deletar {
+    background-color: red;
+    width: 100px;
+}
+
+.botao-deletar:hover {
+    background-color: darkred;
+}
+
+.botao-deletar:active {
+    background-color: white;
+    color: red;
+}
+
+.botao-editar {
+    background-color: orange;
+    width: 120px;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+.botao-editar:hover {
+    background-color: darkorange;
+}
+
+.botao-editar:active {
+    background-color: white;
+    color: darkorange;
+}
