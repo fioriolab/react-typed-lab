@@ -1,4 +1,5 @@
 # ⚛️ React JS com TypeScript
+![Tempo de Dedicação](https://img.shields.io/badge/Tempo%20de%20Dedica%C3%A7%C3%A3o-4h-blue)
 
 Este repositório contém os principais projetos realizados em React + TypeScript
 
