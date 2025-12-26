@@ -15,13 +15,13 @@
 
 ---
 
-## 🏆 Milestones (Conquistas de Código)
+## 📚 Projetos Concluídos
 
-| Status | Desafio Técnico | Data de Build | Nível |
-| :---: | :--- | :--- | :--- |
-| ✅ | **Gasolina ou etanol** | `24/12/2025` | Lógica & Hooks |
-| ✅ | **Lista de Tarefas** | `23/12/2025` | Props & State |
-| ✅ | **Frases** | `26/12/2025` | Componentização |
+| Projeto | Data Reforço |
+| :--- | :---: |
+| **Gasolina ou etanol** | ![](https://img.shields.io/badge/24%2F12%2F2025-darkgreen) |
+| **Lista de Tarefas** | ![](https://img.shields.io/badge/23%2F12%2F2025-darkgreen) |
+| **Frases** | ![](https://img.shields.io/badge/26%2F12%2F2025-darkgreen) |
 
 ---
 
