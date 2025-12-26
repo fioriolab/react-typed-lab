@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+# 💡 Projeto Frases - React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um gerador de frases aleatórias simples e funcional construído com **React**. O projeto permite que o usuário escolha entre diferentes categorias (como "Motivação" e "Bom-Dia") e gere uma frase inspiradora com um clique.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## React Compiler
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React** (Vite)
+* **TypeScript**
+* **Hooks** (useState)
+* **CSS3** (Estilização customizada)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📋 Funcionalidades
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [x] **Alternância entre categorias**: Escolha o tema da frase que deseja ler.
+- [x] **Geração aleatória**: Algoritmo que seleciona uma frase diferente dentro da categoria.
+- [x] **Renderização condicional**: A interface se adapta para exibir o conteúdo apenas após a interação.
+- [x] **Feedback visual**: Destaque visual no botão da categoria que está ativa no momento.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Como construir este projeto
+
+Nesta seção, detalhamos a arquitetura lógica e o funcionamento do gerenciamento de dados da aplicação.
+
+### 1. Estrutura de Dados
+O coração do projeto é um array de objetos chamado `allFrases`. Esta estrutura foi pensada para facilitar a escalabilidade e o acesso indexado.
+
+* **id:** Identificador único da categoria.
+* **nome:** Título da categoria (ex: Motivação, Bom-Dia).
+* **frases:** Um sub-array contendo as strings das frases correspondentes.
+
+
+
+### 2. Gerenciamento de Estado
+Utilizamos o hook `useState` para controlar dois pontos cruciais:
+
+| Estado | Descrição |
+| :--- | :--- |
+| `textoFrase` | Armazena a string da frase selecionada aleatoriamente que será exibida na tela. |
+| `categoriaSelecionada` | Armazena o índice numérico da categoria atual (ex: `0` para Motivação, `1` para Bom-Dia). |
+
+
+
+### 3. Lógica Principal
+A função `gerarFrase` utiliza a classe `Math` para sortear um índice aleatório dentro do array da categoria escolhida:
+
+```javascript
+function gerarFrase() {
+  let numeroAleatorio = Math.floor(Math.random() * allFrases[categoriaSelecionada].frases.length)
+  setTextoFrase(allFrases[categoriaSelecionada].frases[numeroAleatorio])
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 4. Renderização Condicional
+A frase só aparece se o estado `textoFrase` não estiver vazio. Isso evita que um parágrafo vazio apareça na tela ao carregar a página
+
+```javascript
+{textoFrase !== '' && <p className="textoFrase">{textoFrase}</p>}
 ```
