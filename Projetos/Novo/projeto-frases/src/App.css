@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+main {
+    text-align: center;
+    max-width: 900px;
+    color: white;
+}
+
+main img {
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+main button {
+    border-radius: 4px;
+    padding: 7px 20px;
+    margin: 15px 5px;
+    cursor: pointer;
+}
+
+main .button-phrase {
+    background-color: #1FA4DB;
+    color: white;
+    font-weight: 500;
+    border: none;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+main .button-phrase:hover {
+    background-color: #1a89b8;
+    transition-duration: .2s;
+}
+
+main .button-phrase:active {
+    background-color: white;
+    color: #1a89b8;
+    transition-duration: 0s;
+}
+
+main .textoFrase {
+    background-color: white;
+    color: #ff5e00;
+    padding: 10px;
+    border-radius: 5px;
+    font-style: italic;
+}
