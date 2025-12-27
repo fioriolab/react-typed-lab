@@ -6,7 +6,7 @@
     <td width="78%">
       <img src="https://img.shields.io/badge/Tempo_de_Estudo-5h_dedicadas-171a21?style=flat&logo=typescript" />
       <img src="https://img.shields.io/badge/Status-Em_Aprendizado-brightgreen?style=flat" />
-      <img src="https://img.shields.io/badge/Módulos_Concluídos-1_de_10-orange?style=flat" />
+      <img src="https://img.shields.io/badge/Módulos_Concluídos-2_de_10-orange?style=flat" />
     </td>
   </tr>
 </table>
